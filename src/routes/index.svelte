@@ -33,6 +33,9 @@
     <textarea bind:value={input} class="w-full h-screen" placeholder="Start typing your thread here..." />
   </div>
   <div class="col-span-1 p-2 grid grid-flow-row">
+    {#if tweets.length < 1}
+      <div class="shadow-md rounded-md"><p class="p-2">And it'll appear split up here.</p></div>
+    {/if}
     {#each tweets as tweet}
       <div class="shadow-md rounded-md"><p class="p-2">{tweet}</p></div>
     {/each}
