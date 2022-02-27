@@ -1,4 +1,9 @@
 <script lang="ts">
+  import Clipboard from "$lib/icons/Clipboard.svelte";
+  const clip = (content: string) => {
+    navigator.clipboard.writeText(content);
+  };
+
   const splitThread = (input: string) => {
     if (!input || input.length <= 1) {
       return [];
@@ -37,7 +42,12 @@
       <div class="shadow-md rounded-md"><p class="p-2">And it'll appear split up here.</p></div>
     {/if}
     {#each tweets as tweet}
-      <div class="shadow-md rounded-md"><p class="p-2">{tweet}</p></div>
+      <div class="shadow-md rounded-md max-h-content">
+        <p class="p-2">{tweet}</p>
+        <div class="grid justify-end p-2" on:click={() => clip(tweet)}>
+          <Clipboard />
+        </div>
+      </div>
     {/each}
   </div>
 </div>
