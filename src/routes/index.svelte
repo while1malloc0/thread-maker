@@ -12,15 +12,21 @@
     let tweets = [];
     let currentTweet = "";
     for (let sentence of sentences) {
-      if (currentTweet.length >= 280) {
+      // case 1: sentence is too long
+      if (sentence.length > 280) {
+        // TODO do better error handling
+        currentTweet = "Error: sentence too long";
+        break;
+      }
+      // case 2: sentence + current tweet is too long, ship current tweet
+      if (sentence.length + currentTweet.length >= 280) {
         tweets.push(currentTweet);
         currentTweet = "";
       }
-      if (sentence.length > 280) {
-      } else {
-        currentTweet += sentence;
-      }
+      // case 3: sentence will fit in current tweet
+      currentTweet += sentence;
     }
+    // push last tweet that was composed
     tweets.push(currentTweet);
     return tweets;
   };
