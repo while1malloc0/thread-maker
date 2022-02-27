@@ -8,7 +8,7 @@
     if (!input || input.length <= 1) {
       return [];
     }
-    let sentences = input.split(/[.!?]/);
+    let sentences = input.split(/([.!?])/);
     let tweets = [];
     let currentTweet = "";
     for (let sentence of sentences) {
