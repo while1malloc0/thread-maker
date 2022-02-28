@@ -62,7 +62,7 @@
       <div class="shadow-md rounded-md"><p class="p-2">...and comes out as a thread here</p></div>
     {/if}
     {#each state.tweets as tweet}
-      <div class="shadow-md rounded-md max-h-content border-1 border-gray-100">
+      <div class="shadow-md rounded-md h-fit border-1 border-gray-100">
         <p class="p-2">{tweet}</p>
         <div class="grid justify-end p-2" on:click={() => clip(tweet)}>
           <Clipboard />
