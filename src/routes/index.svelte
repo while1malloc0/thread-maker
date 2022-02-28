@@ -52,7 +52,7 @@
     <textarea
       on:keyup={() => (state = splitThread(input))}
       bind:value={input}
-      class="w-full h-screen"
+      class="w-full h-screen outline-0"
       placeholder="Long text goes in here..."
     />
   </div>
