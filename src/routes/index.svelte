@@ -46,7 +46,7 @@
     <div class="bg-red-500 text-white text-center p-2">{state.errors.banner}</div>
   {/if}
 </div>
-<h1 class="px-5 py-2 text-3xl">Thread maker</h1>
+<h1 class="px-5 py-2 text-3xl">Tweet thread maker</h1>
 <div class="p-5 grid grid-flow-col grid-cols-4">
   <div class="col-span-2 p-2 border-2 {textAreaBorder} rounded-md">
     <textarea
